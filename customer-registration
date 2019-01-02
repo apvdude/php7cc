@@ -1,0 +1,329 @@
+<?php include('preheader.php');?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script src="https://services.thomasnet.com/roi/client.js?tid=10014080"></script>
+<title>Controlled and Low Expansion Alloys Invar, Kovar, ASTM F-15, Pernifer, NILO, Dilvar, Rodar from Ed Fagan Inc.</title>
+<meta name="title" content="" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+
+
+<!-- //      Site Stylesheets       // -->
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/main.css" rel="stylesheet" type="text/css" />
+<link href="css/jqueryslidemenu.css" rel="stylesheet" type="text/css"/>
+<link href="accordian.css" rel="stylesheet" type="text/css"/>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<!---------------------responsive--Start-------------------------->
+
+<link href="css/res-css/bootstrap.min.css" rel=stylesheet type="text/css"/>
+
+<script src="js/res-js/bootstrap.min.js"></script>
+<!-----------menu------------>
+
+ <link rel="stylesheet" href="css/res-css/styles.css">
+ 
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript">
+	Cufon.replace('h1') ('h1 a') ('h2') ('h3') ('h4') ('h5') ('h6') ('blockquote') ('#maintitle') ('#box-title')
+</script>
+<script type="text/javascript" src="js/jqueryslidemenu.js"></script>
+
+
+<!-- //      Accordian Files        // -->
+<script type="text/javascript" src="js/script.js"></script>
+
+<script type="text/javascript">
+function replaceme(which,img) {
+which.src = img;
+}
+function restoreme(which,img) {
+which.src = img;
+}
+</script>
+
+<style type="text/css">
+<!--
+body {
+	background-color: #218303;
+}
+-->
+</style>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NGX3S44');</script>
+<!-- End Google Tag Manager -->
+
+<script type="text/javascript" src="http://trace-2000.com/js/16949.js" async="async"></script>
+ 
+<link rel="canonical" href="http://www.edfagan.com/index.php" /><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NGX3S44"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="bg_container">
+
+
+					<!-- BEGIN HEADER -->
+                    <div id="header">
+					<?php include('header.php'); ?>
+					</div>
+					<!-- END HEADER -->
+
+
+					<div class="container">
+                    <div class="row" style="width:925px; margin:0 auto;">
+					<div id="box-title">
+					The	Materials You Need <span class="title">When You	Need Them</span></div>
+
+                    </div>
+                    </div>
+
+                    <!-- end box-title -->
+
+
+                     <div class="container">
+                    	<div class="global-sales">
+
+
+					<div class="row">
+					<!-- Bxslider Start -->
+    <?php include('slider_include.php'); ?>
+  <!-- Bxslider End --> 
+</div>
+
+				<!-- BEGIN CONTENT -->
+                <div class="row">
+				<div id="content">
+			<div class="col-xs-12 col-sm-12 col-md-3">
+					<div id="content-left" style="padding-left:20px;">
+                    <?php include('accordian.php'); ?>
+      				</div>
+
+                    </div>
+                    <!-- end content-left -->
+
+                   <div class="col-xs-12 col-sm-12 col-md-1">
+                    <div id="divider"></div>
+                    </div>
+
+                     <div class="col-xs-12 col-sm-12 col-md-8">
+                    <div id="content-accordian">
+						<?php
+							if(isset($_POST) && !empty($_POST)){
+								$pass = $_POST['pass_word'];
+								$result = dbcaller("INSERT INTO " . USERS_TABLE . " (user_id, user_name, pass_word, user_regdate) VALUES ('', '" . $_POST['user_email'] . "', '" . md5($pass) . "', '" . time() . "')")or die('<font color="#000000">' . mysql_error() . '</font>');
+								$uid = mysql_insert_id();
+								$result = dbcaller("INSERT INTO " . USERS_DETAILS_TABLE . " (user_id, user_first_name, user_last_name, user_email, user_organization_title, user_company, user_phone) VALUES ('" . mysql_insert_id() . "', '" . $_POST['user_first_name'] . "', '" . $_POST['user_last_name'] . "', '" . $_POST['user_email'] . "', '" . $_POST['user_organization_title'] . "', '" . $_POST['user_company'] . "', '" . $_POST['user_phone'] . "')")or die('<font color="#000000">' . mysql_error() . '</font>');
+								echo('<h1>You Have Successfully Registered!</h1><p>Please Login Below.</p>');
+								$redirect = $_POST['redirect'];
+								echo('<table cellspacing="0" class="tbmain" width="350">
+								<tr>
+									<td colspan="3" valign="top" class="midleft">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							  				<tr>
+							    				<td valign="top">' . $_REQUEST['msg'] . '<br>
+													<form action="./login.php" method="post">
+							      					<table cellspacing="2" cellpadding="2" width="100%" align="center" border="0">
+							        					<tr class="style2">
+							          						<td height="25" colspan="2" align=center class="style2"><span class="style3">Login</span></td>
+							        					</tr>
+							   							<tr class="style2">
+							          						<td colspan="2"><div id="err_message"></div><div align="center"><font color="red">Email and Password are case sensitive</font></div></td>
+							        					</tr>
+							        					<tr class="style2">
+							          						<td width="40%"><div align="right">Email:</div></td>
+							          						<td width="60%" align="left"><input name="user_name" type="text" size="15" /></td>
+							        					</tr>
+							        					<tr class="style2">
+							          						<td width="40%"><div align="right">Password: </div></td>
+							          						<td width="60%"><input name="pass_word" type="password" size="15" />          </td>
+							        					</tr>
+
+
+							        					<tr>
+							          						<td width="40%" align="center"></td>
+							        					    <td width="60%">
+							        					        <input type="hidden" name="redirect" value="' . $redirect . '"><input type="hidden" name="login" value="true"><input name="submit" type="submit" value=Login />
+							        					    </td>
+							        					</tr>
+							        					<tr>
+							          						<td colspan="2" align="center"><br /><br /><span><strong>
+
+							          						    Forgot Your Passord? <a href="password.php">Click here!</a></strong> </span></td>
+							        					</tr>
+														<tr>
+							          						<td colspan="2" align="center"><br /><br /><span><strong>
+
+							          						    Not Registered Yet? <a href="customer-registration.php">Click here!</a></strong> </span></td>
+							        					</tr>
+							      					</table>
+							    					</form>
+												</td>
+							  				</tr>
+										</table>
+									</td>
+							    </tr>
+							</table>');
+							}else{
+								$redirect = $_REQUEST['redirect'];
+						?>
+					  		<h1>Customer Registration for Ed Fagan Technical Docs</h1>
+
+							<p>In order to serve you better, please fill out the form below and click the submit button. You will then be able to access our comprehensive library of technical articles, theoretical papers, processing guides, manufacturers' data, historical documents, and many other types of useful Information.</p>
+
+							<form action="" method="post">
+                            <div class="table-responsive">
+							<table width="100%" border="0">
+							  <tr>
+							    <td width="125" valign="top"><strong>Last Name:</strong> <span class="redstar">*</span></td>
+							    <td><span id="sprytextfield1">
+							      <input name="user_last_name" type="text" id="last" size="35" />
+							      <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							    </tr>
+							  <tr>
+							    <td width="125" valign="top"><strong>First Name:</strong> <span class="redstar">*</span></td>
+							    <td><span id="sprytextfield2">
+							      <input name="user_first_name" type="text" id="first" size="35" />
+							      <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							  </tr>
+							  <tr>
+							    <td width="125" valign="top"><strong>Organization Title: <span class="redstar">*</span></strong></td>
+							    <td><input name="user_organization_title" type="text" id="organization" size="35" />
+							    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							  </tr>
+							  <tr>
+							    <td width="125" valign="top"><strong>Company: <span class="redstar">*</span></strong></td>
+							    <td><input name="user_company" type="text" id="company" size="35" />
+							    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							  </tr>
+							  <tr>
+							    <td width="125" valign="top"><strong>E-Mail: <span class="redstar">*</span></strong></td>
+							    <td><input name="user_email" type="text" id="email" size="35" />
+							    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							  </tr>
+							  <tr>
+							    <td width="125" valign="top"><strong>Password: <span class="redstar">*</span></strong></td>
+							    <td><input name="pass_word" type="text" id="pass_word" size="35" />
+							    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							  </tr>
+							  <tr>
+							    <td width="125" valign="top"><strong>Phone: <span class="redstar">*</span></strong></td>
+							    <td><input name="user_phone" type="text" id="phone" size="35" />
+							    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+							  </tr>
+							  <tr>
+							    <td width="125" valign="top"><span class="redstar">*</span> <strong>Required Fields</strong></td>
+							    <td><input type="hidden" name="redirect" value="<?= $redirect ?>"><INPUT TYPE=SUBMIT value="Submit"></td>
+							  </tr>
+							</table>
+                            </div>
+							</form>
+							<br />
+							<h1>Already registered? Login Below</h1>
+                            <div class="table-responsive">
+							<table cellspacing='0' class='tbmain' width="100%">
+								<tr>
+									<td colspan="3" valign="top" class='midleft'>
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							  				<tr>
+							    				<td valign="top"><?= $_REQUEST['msg'] ?><br>
+													<form action="./login.php" method="post">
+							      					<table cellspacing="2" cellpadding="2" width="100%" align="center" border="0">
+							        					<tr class="style2">
+							          						<td height="25" colspan="2" align=center class="style2"><span class="style3">Login</span></td>
+							        					</tr>
+							   							<tr class="style2">
+							          						<td colspan="2"><div id="err_message"></div><div align="center"><font color="red">Email and Password are case sensitive</font></div></td>
+							        					</tr>
+							        					<tr class="style2">
+							          						<td width="40%"><div align="right">Email:</div></td>
+							          						<td width="60%" align="left"><input name="user_name" type="text" size="15" /></td>
+							        					</tr>
+							        					<tr class="style2">
+							          						<td width="40%"><div align="right">Password: </div></td>
+							          						<td width="60%"><input name="pass_word" type="password" size="15" />          </td>
+							        					</tr>
+
+
+							        					<tr>
+							          						<td width="40%" align="center"></td>
+							        					    <td width="60%">
+							        					        <input type="hidden" name="redirect" value="<?php echo $redirect; ?>"><input type="hidden" name="login" value="true"><input name="submit" type="submit" value=Login />
+							        					    </td>
+							        					</tr>
+							        					<tr>
+							          						<td colspan="2" align="center"><br /><br /><span><strong>
+
+							          						    Forgot Your Passord? <a href="password.php">Click here!</a></strong> </span></td>
+							        					</tr>
+														<tr>
+							          						<td colspan="2" align="center"><br /><br /><span><strong>
+
+							          						    Not Registered Yet? <a href="customer-registration.php">Click here!</a></strong> </span></td>
+							        					</tr>
+							      					</table>
+							    					</form>
+												</td>
+							  				</tr>
+										</table>
+									</td>
+							    </tr>
+							</table>
+                            </div>
+						<?php
+						}
+						?>
+                  </div>
+                  </div>
+                    <!-- end #content-left -->
+
+
+
+
+
+				  <div class="clr"></div><!-- end clear float -->
+				</div>
+                </div>
+                <!-- end #content -->
+				<!-- END CONTENT -->
+
+                </div>
+                </div>
+
+
+
+
+	<div class="container">
+		<div id="container_footer">
+			<div class="centercolumn">
+
+
+					<!-- BEGIN FOOTER -->
+					<div id="footer">
+                	<?php include('footer.php'); ?>
+
+                    </div>
+                    </div>
+                    </div>
+                    </div>
